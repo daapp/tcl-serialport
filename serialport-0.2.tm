@@ -3,8 +3,6 @@ package require snit
 
 
 snit::type serialport {
-    typemethod version {} {return 0.1}
-
     option -port -default com1 -configuremethod SetPort
     option -mode -default ""   -configuremethod SetMode -cgetmethod GetMode
     option -ttycontrol -configuremethod SetTtyControl
@@ -202,6 +200,3 @@ snit::type serialport {
         chan event $channel {*}$args
     }
 }
-
-package provide serialport [serialport version]
-# vim:ts=4:sw=4:expandtab
